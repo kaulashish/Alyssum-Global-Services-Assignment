@@ -37,7 +37,7 @@ def translate_(df):
 def export_to_sql(df):
     engine = create_engine('mysql+pymysql://root:root@127.0.0.1:3306/Alyssum')
     df.to_sql(name = 'alyssum', con = engine, if_exists = 'replace', index = False)
-    pd.read_sql('alyssum', engine)
+    print('Data has been successfully scraped and exported to database. \n\n',pd.read_sql_table('alyssum', engine))
 
 
 if __name__ == '__main__':
