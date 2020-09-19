@@ -31,7 +31,6 @@ def translate_(df):
     translator = Translator()
     translated_df = df
     translated_df['Indicator Name'] = df['Indicator Name'].map(lambda x: translator.translate(x).text)
-    #return translated_df
     return export_to_sql(translated_df)
 
 def export_to_sql(df):
